@@ -4,13 +4,16 @@ def bsearch(list, v):
     i = math.floor(len(list)/2)
     j = len(list)-1
     if len(list)<2:
-        answer = list
-        return answer
+        if list == []:
+            return None
+        else:
+            return list[0]
     if list[i] == v:
+        print("found2")
         answer = list[i]
         return answer
     if list[i] < v:
-        b_list = list[i:j]
+        b_list = list[i-1:j]
         return bsearch(b_list, v)
     if list[i] > v:
         b_list = list[0:i+1]
@@ -34,16 +37,44 @@ def linear_search(list, value):
 
 
 time1 = time.perf_counter()
-test_list = seed_values(56786786)
+test_list = seed_values(56786723)
 time2 = time.perf_counter()
 time3 = time.perf_counter()
-appropriate_value = bsearch(test_list, 49000000)
+appropriate_value = bsearch(test_list, 49000001)
 time4 = time.perf_counter()
 time5 = time.perf_counter()
-linear_search_result = linear_search(test_list, 49000000)
+linear_search_result = linear_search(test_list, 49000011)
 time6 = time.perf_counter()
 
 print(f"Test list created in {time2-time1:0.4f} seconds.")
 print(f"{appropriate_value} found by binary search in {time4-time3:0.4f} seconds.")
 print(f"{linear_search_result} found by linear search in {time6-time5:0.4f} seconds")
 
+def binary_search(arr, low, high, x):
+ 
+    # Check base case
+    if high >= low:
+ 
+        mid = (high + low) // 2
+ 
+        # If element is present at the middle itself
+        if arr[mid] == x:
+            return mid
+ 
+        # If element is smaller than mid, then it can only
+        # be present in left subarray
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid - 1, x)
+ 
+        # Else the element can only be present in right subarray
+        else:
+            return binary_search(arr, mid + 1, high, x)
+ 
+    else:
+        # Element is not present in the array
+        return -1
+
+time7 = time.perf_counter()
+bsearch_results = binary_search(test_list, 0, len(test_list)-1, 490000)
+time8 = time.perf_counter()
+print(f"The indentified value was found at an index of {bsearch_results} and was found in {time8-time7:0.4f} seconds.")
