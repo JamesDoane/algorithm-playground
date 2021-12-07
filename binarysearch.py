@@ -1,17 +1,22 @@
 import math
 import time
+
 def bsearch(list, v):
-    i = math.floor(len(list)/2)
+    # declare midpoint
+    i = len(list)//2
+    #declare endpoint
     j = len(list)-1
-    if len(list)<2:
-        if list == []:
-            return None
-        else:
-            return list[0]
+    #finds items in small list
+    if len(list)<5:
+        for i in range(len(list)):
+            if list[i] == v:
+                return list[i]
+    # if midpoint is value we seek, return
     if list[i] == v:
         print("found2")
         answer = list[i]
         return answer
+    #if midpoint != value we seek, re-search
     if list[i] < v:
         b_list = list[i-1:j]
         return bsearch(b_list, v)
@@ -40,7 +45,7 @@ time1 = time.perf_counter()
 test_list = seed_values(56786723)
 time2 = time.perf_counter()
 time3 = time.perf_counter()
-appropriate_value = bsearch(test_list, 49000001)
+appropriate_value = bsearch(test_list, 49000000)
 time4 = time.perf_counter()
 time5 = time.perf_counter()
 linear_search_result = linear_search(test_list, 49000011)
@@ -75,6 +80,6 @@ def binary_search(arr, low, high, x):
         return -1
 
 time7 = time.perf_counter()
-bsearch_results = binary_search(test_list, 0, len(test_list)-1, 490000)
+bsearch_results = binary_search(test_list, 0, len(test_list)-1, 49000000)
 time8 = time.perf_counter()
 print(f"The indentified value was found at an index of {bsearch_results} and was found in {time8-time7:0.4f} seconds.")
