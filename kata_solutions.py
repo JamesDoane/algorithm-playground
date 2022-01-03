@@ -122,3 +122,128 @@ def beeramid(bonus, price):
         layer += 1
     
     return layer
+
+
+#A set of functions that when called in tandem will produce mathematical equations, for example three(times(four())) == 12
+
+def zero(ls=[]):
+    if ls == []:
+        return 0
+    if ls[0] == 1:
+        return 0 + ls[1]
+    elif ls[0] == 2:
+        return 0 - ls[1]
+    elif ls[0] == 3:
+        return 0
+    elif ls[0] == 4:
+        return 0
+def one(ls=[]):
+    if ls == []:
+        return 1
+    if ls[0] == 1:
+        return 1 + ls[1]
+    elif ls[0] == 2:
+        return 1 - ls[1]
+    elif ls[0] == 3:
+        return ls[1]
+    elif ls[0] == 4:
+        return 1 // ls[1]
+def two(ls=[]): 
+    if ls == []:
+        return 2
+    if ls[0] == 1:
+        return 2 + ls[1]
+    elif ls[0] == 2:
+        return 2 - ls[1]
+    elif ls[0] == 3:
+        return 2 * ls[1]
+    elif ls[0] == 4:
+        return 2 // ls[1]
+def three(ls=[]): 
+    if ls == []:
+        return 3
+    if ls[0] == 1:
+        return 3 + ls[1]
+    elif ls[0] == 2:
+        return 3 - ls[1]
+    elif ls[0] == 3:
+        return 3 * ls[1]
+    elif ls[0] == 4:
+        return 3 // ls[1]
+def four(ls=[]):
+    if ls == []:
+        return 4
+    if ls[0] == 1:
+        return 4 + ls[1]
+    elif ls[0] == 2:
+        return 4 - ls[1]
+    elif ls[0] == 3:
+        return 4 * ls[1]
+    elif ls[0] == 4:
+        return 4 // ls[1]
+def five(ls=[]):
+    if ls == []:
+        return 5
+    if ls[0] == 1:
+        return 5 + ls[1]
+    elif ls[0] == 2:
+        return 5 - ls[1]
+    elif ls[0] == 3:
+        return 5 * ls[1]
+    elif ls[0] == 4:
+        return 5 // ls[1]
+def six(ls=[]): 
+    if ls == []:
+        return 6
+    if ls[0] == 1:
+        return 6 + ls[1]
+    elif ls[0] == 2:
+        return 6 - ls[1]
+    elif ls[0] == 3:
+        return 6 * ls[1]
+    elif ls[0] == 4:
+        return 6 // ls[1]
+def seven(ls=[]): 
+    if ls == []:
+        return 7
+    if ls[0] == 1:
+        return 7 + ls[1]
+    elif ls[0] == 2:
+        return 7 - ls[1]
+    elif ls[0] == 3:
+        return 7 * ls[1]
+    elif ls[0] == 4:
+        return 7 // ls[1]
+def eight(ls=[]):
+    if ls == []:
+        return 8
+    if ls[0] == 1:
+        return 8 + ls[1]
+    elif ls[0] == 2:
+        return 8 - ls[1]
+    elif ls[0] == 3:
+        return 8 * ls[1]
+    elif ls[0] == 4:
+        return 8 // ls[1]
+def nine(ls=[]):
+    if ls == []:
+        return 9
+    if ls[0] == 1:
+        return 9 + ls[1]
+    elif ls[0] == 2:
+        return 9 - ls[1]
+    elif ls[0] == 3:
+        return 9 * ls[1]
+    elif ls[0] == 4:
+        return 9 // ls[1]
+
+def plus(x):
+    return [1,x]
+def minus(x):
+    return [2,x]
+def times(x):
+    return [3,x]
+def divided_by(x):
+    return [4,x]
+
+#Upon reviewing the other answers on codewars, the easiest way to achieve this would have been by using lambda functions (or at least the shortest to write). 
